@@ -14,6 +14,8 @@ build:
   entry_points:
     - earthengine = ee.cli.eecli:main
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  # not available for py313:
+  # google-api-python-client and google-auth-httplib2
   skip: true  # [py<39 or py>312 or s390x]
 
 requirements:
