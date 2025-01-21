@@ -14,7 +14,7 @@ build:
   entry_points:
     - earthengine = ee.cli.eecli:main
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  skip: true  # [py<39 or s390x]
+  skip: true  # [py<39 or py>312 or s390x]
 
 requirements:
   host:
