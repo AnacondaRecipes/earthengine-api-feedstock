@@ -53,7 +53,7 @@ test:
     - pytest -vv ee/tests
 
 about:
-  home: https://earthengine.google.com/
+  home: https://github.com/google/earthengine-api
   license: Apache-2.0
   license_family: APACHE
   license_file: LICENSE
