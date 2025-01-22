@@ -1,5 +1,5 @@
 {% set name = "earthengine-api" %}
-{% set version = "1.4.3" %}
+{% set version = "1.4.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/earthengine_api-{{ version }}.tar.gz
-  sha256: 052b65d4dfc6cc474d70fb78946cd981aee4c52e6df6dfbbe17a9ac5124214d0
+  sha256: 5ba26dceef09aca91b610280bde2ee819638aaeba2dd3cf44252ce4862f36d55
 
 build:
   number: 0
@@ -48,6 +48,8 @@ test:
   commands:
     - earthengine --help
     - pip check
+    # check that pip gets correct version
+    - python -c "from importlib.metadata import version; assert(version('{{ name }}')=='{{ version }}')"
     - pytest -vv ee/tests
 
 about:
